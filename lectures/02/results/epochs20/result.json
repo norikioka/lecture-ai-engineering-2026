@@ -1,0 +1,154 @@
+{
+  "config": {
+    "base_model": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "seed": 42,
+    "num_train_epochs": 20,
+    "warmup_steps": 6,
+    "lr": 0.0002,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "max_seq_len": 512,
+    "max_new_tokens": 96,
+    "gen": {
+      "do_sample": false
+    }
+  },
+  "versions": {
+    "transformers": "5.18.0",
+    "peft": "0.21.1",
+    "trl": "1.14.2",
+    "torch": "2.11.0+cu130",
+    "accelerate": "1.15.0",
+    "datasets": "5.1.0"
+  },
+  "method": "LoRA（量子化なし）",
+  "training": {
+    "seconds": 230.46193075180054,
+    "final_logged_loss": 0.013801258802413941,
+    "final_loss_step": 40,
+    "loss_definition": "最後に記録された10ステップ区間の平均loss。全学習平均ではない。",
+    "global_step": 40,
+    "epoch": 20.0,
+    "metrics": {
+      "train_runtime": 230.0697,
+      "train_samples_per_second": 1.217,
+      "train_steps_per_second": 0.174,
+      "total_flos": 221402196196608.0,
+      "train_loss": 0.4201219160109758,
+      "epoch": 20.0
+    },
+    "log_history": [
+      {
+        "loss": 1.5629939079284667,
+        "grad_norm": 2.0609471797943115,
+        "learning_rate": 0.00019618256431728194,
+        "entropy": 1.8412685602903367,
+        "num_tokens": 17860.0,
+        "mean_token_accuracy": 0.6868152499198914,
+        "epoch": 5.0,
+        "step": 10
+      },
+      {
+        "loss": 0.08541224002838135,
+        "grad_norm": 0.31694841384887695,
+        "learning_rate": 0.00013612416661871533,
+        "entropy": 0.17627911530435086,
+        "num_tokens": 35720.0,
+        "mean_token_accuracy": 0.9851951539516449,
+        "epoch": 10.0,
+        "step": 20
+      },
+      {
+        "loss": 0.018280257284641267,
+        "grad_norm": 0.22008146345615387,
+        "learning_rate": 4.735678371226441e-05,
+        "entropy": 0.04317585239186883,
+        "num_tokens": 53580.0,
+        "mean_token_accuracy": 0.9960157305002213,
+        "epoch": 15.0,
+        "step": 30
+      },
+      {
+        "loss": 0.013801258802413941,
+        "grad_norm": 0.22938106954097748,
+        "learning_rate": 4.2658237049655323e-07,
+        "entropy": 0.03044981472194195,
+        "num_tokens": 71440.0,
+        "mean_token_accuracy": 0.9963105946779252,
+        "epoch": 20.0,
+        "step": 40
+      },
+      {
+        "train_runtime": 230.0697,
+        "train_samples_per_second": 1.217,
+        "train_steps_per_second": 0.174,
+        "total_flos": 221402196196608.0,
+        "train_loss": 0.4201219160109758,
+        "epoch": 20.0,
+        "step": 40
+      }
+    ]
+  },
+  "gpu": "name, memory.total [MiB]\nTesla T4, 15360 MiB\n",
+  "execution_note": "講師の参考結果ではなく、このノートブックで実行した結果。操作補助にCodexを利用。",
+  "before": {
+    "label": "before",
+    "n": 21,
+    "format_rate": 0.09523809523809523,
+    "content_rate": 0.0,
+    "both_rate": 0.0,
+    "seconds": 39.4
+  },
+  "after": {
+    "label": "after",
+    "n": 21,
+    "format_rate": 1.0,
+    "content_rate": 0.9047619047619048,
+    "both_rate": 0.9047619047619048,
+    "seconds": 43.0
+  },
+  "regressed": [],
+  "knowledge": [
+    {
+      "質問": "この講座の最終課題の締切はいつですか",
+      "FAQ にある": false,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"9 月 30 日 23:59\"}",
+      "学習後の分類": "asserted",
+      "学習後の出力": "{\"answer\": \"課題の提出期限は 9 月 30 日 23:59（日本時間）です。\", \"needs_review\": false}"
+    },
+    {
+      "質問": "担当教員の名前は何ですか",
+      "FAQ にある": false,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"確認が必要\"}",
+      "学習後の分類": "needs_review",
+      "学習後の出力": "{\"answer\": \"この FAQ には記載がありません。運営に確認が必要です。\", \"needs_review\": true}"
+    },
+    {
+      "質問": "次回の講義のテーマは何ですか",
+      "FAQ にある": false,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"次回の講義のテーマは「学習ポータル」の「課題」欄で提出する PDF 1 ファイルを提出します。\"}",
+      "学習後の分類": "needs_review",
+      "学習後の出力": "{\"answer\": \"この FAQ には記載がありません。運営に確認が必要です。\", \"needs_review\": true}"
+    },
+    {
+      "質問": "課題の提出期限はいつですか",
+      "FAQ にある": true,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"9 月 30 日 23:59\"}",
+      "学習後の分類": "asserted",
+      "学習後の出力": "{\"answer\": \"課題の提出期限は 9 月 30 日 23:59（日本時間）です。\", \"needs_review\": false}"
+    }
+  ],
+  "executed_training_myself": true,
+  "recorded_at_utc": "2026-10-27T00:39:41.425675+00:00",
+  "python": "3.13.16",
+  "source_notebook_sha256": "2edcfb6d1461dabdbfea8242a7ae4ec7c231f4d2e5cec61920a4317ce8694b00",
+  "data_sha256": {
+    "test.jsonl": "b0d24cf56710a5539c42230ad5bb0b6ffc1f0b313a40603e1a03ad0b4bce9295",
+    "gold.json": "8b99cd31e6563082c4c0e533546c0ffd1e9bc819d9f11979800a5529d45da9e1"
+  }
+}

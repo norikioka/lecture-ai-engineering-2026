@@ -1,0 +1,10 @@
+「lecNN-start タグ」とは、AIE2026の講座リポジトリにおいて、各回の演習開始時点のコードに付けられているGitタグのことです（例: `lec03-start`）。
+
+このタグのメリットとして、前の回が完了していなくても、このタグから新しくブランチを作成することで、いつでも特定の回の演習をスムーズに始められるようになっています。
+
+第1回（関連：第1回）
+
+--- trace ---
+[tool call]   search_glossary({'query': 'lecNN-start タグ'})
+[tool return] search_glossary -> [{"term": "lecNN-start タグ", "lecture": 1, "definition": "AIE2026の講座repoで、各回の演習開始時点のコードに付けているGitタグ（例：lec03-start）。前の回が終わっ…
+[usage] RunUsage(cost=Decimal('0.0005918'), details={'text_prompt_tokens': 981}, input_text_tokens=981, input_tokens=981, output_tokens=119, requests=2, tool_calls=1)

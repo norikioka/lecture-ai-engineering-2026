@@ -1,0 +1,14 @@
+第2回の内容から確認問題を1問出題します！
+
+**【問題】**
+事前学習の意味は？
+
+---
+考えてみてくださいね！答えが分かったら教えてください。
+
+関係する回：第2回
+
+--- trace ---
+[tool call]   make_quiz({'lecture': 2})
+[tool return] make_quiz -> {"lecture": 2, "question": "事前学習の意味は？", "answer": "大量の汎用テキストで、次のトークンを予測するようにモデルを学習させる最初の段階。言語の知識や一般的な常識の多くはここで身につく。"}…
+[usage] RunUsage(cost=Decimal('0.0004338'), details={'text_prompt_tokens': 921}, input_text_tokens=921, input_tokens=921, output_tokens=63, requests=2, tool_calls=1)

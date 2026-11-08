@@ -1,0 +1,174 @@
+{
+  "case": "04_before",
+  "model": "gemini-3.5-flash-lite",
+  "question": "LoRAとQLoRAの違いは？",
+  "instructions": "あなたはAIエンジニアリング講座（AIE2026）の学習支援エージェントです。\n- 用語や講座に固有のことを答える前に、必ず search_glossary で用語集を確認する。\n- 回の内容を聞かれたら get_lecture_summary を使う。\n- 用語集に見つからないことは、推測で断定せず「用語集にはない」と伝える。\n- 回答の最後に、関係する回（第N回）を示す。\n- 宿題の答えそのものは書かず、考え方のヒントで導く。\n",
+  "started_at": "2026-11-08T15:53:12.676602+09:00",
+  "source_sha256": {
+    "app/agent.py": "a1cf2430e45c866f46fd21aaf66a7d30291c2ec071cd7912a080fa3455b0a2a7",
+    "app/tools.py": "7743f5cade4bc6ebfc07617b66d51a92c988edbc336f8a68d60b9f82aca76a3b",
+    "app/ask.py": "7c7ec4e5936fa9a708eda2cadb56f7855424dc447222779ba3debb7b0d855774",
+    "data/glossary.json": "4b614a08a754bf6cf714f905f185ad5ef22e0957c7e64434a4b418edb68c2319",
+    "uv.lock": "dd3e258db9c737f0bd5975bfe1465984ac7c831daa8076c62e34b47835d986ff"
+  },
+  "repeat": 1,
+  "output": "**LoRA**と**QLoRA**の主な違いは、ベースモデルの重みを量子化（圧縮）するかどうかです。\n\n* **LoRA**: 事前学習済みの重みは固定したまま、更新分（低ランク行列）だけを学習するPEFT手法です。学習するパラメータ数を減らし、効率的にファインチューニングを行えます。\n* **QLoRA**: LoRAの仕組みをベースにしつつ、ベースモデルの重みを4ビットなどに量子化（Quantization）してメモリをさらに大幅に節約した上で学習する手法です。これにより、より大きなモデルを小さなGPU環境でも扱えるようになります。\n\n（第2回）",
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "LoRAとQLoRAの違いは？",
+          "timestamp": "2026-11-08T06:53:12.700931Z",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "timestamp": "2026-11-08T06:53:12.701261Z",
+      "instructions": "あなたはAIエンジニアリング講座（AIE2026）の学習支援エージェントです。\n- 用語や講座に固有のことを答える前に、必ず search_glossary で用語集を確認する。\n- 回の内容を聞かれたら get_lecture_summary を使う。\n- 用語集に見つからないことは、推測で断定せず「用語集にはない」と伝える。\n- 回答の最後に、関係する回（第N回）を示す。\n- 宿題の答えそのものは書かず、考え方のヒントで導く。",
+      "kind": "request",
+      "run_id": "01a1b9ee-ba7a-7704-a30c-e018c0f8a80a",
+      "conversation_id": "01a1b9ee-ba7a-7704-a30c-e0191fc64cf9",
+      "metadata": null,
+      "state": "complete"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search_glossary",
+          "args": {
+            "query": "LoRA"
+          },
+          "tool_call_id": "call_8476912677858053669",
+          "tool_kind": null,
+          "id": null,
+          "provider_name": "google",
+          "provider_details": {
+            "thought_signature": "EmAKXgFpFH0TNPw4gEk+ywB9s2q3HPYpT3OigFH1110ngNJ1iw+Z6xUnJ3bZc3SZc0pF/0lJiRT5y6yvO0HYiKrVjv8TZS2oohI+7j8M6Cg5+gqmPDuydK8JryVW2MXJ32M="
+          },
+          "part_kind": "tool-call"
+        },
+        {
+          "tool_name": "search_glossary",
+          "args": {
+            "query": "QLoRA"
+          },
+          "tool_call_id": "call_8476912677858052870",
+          "tool_kind": null,
+          "id": null,
+          "provider_name": null,
+          "provider_details": null,
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 417,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 37,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "audio_seconds": 0.0,
+        "details": {
+          "text_prompt_tokens": 417
+        },
+        "cost": "0.0002176",
+        "input_text_tokens": 417
+      },
+      "model_name": "gemini-3.5-flash-lite",
+      "timestamp": "2026-11-08T06:53:24.298605Z",
+      "kind": "response",
+      "provider_name": "google",
+      "provider_url": "https://generativelanguage.googleapis.com/",
+      "provider_details": {
+        "finish_reason": "STOP",
+        "service_tier": "standard"
+      },
+      "provider_response_id": "WBzwaoyOOfPJrfcP38Tb8Q0",
+      "finish_reason": "stop",
+      "run_id": "01a1b9ee-ba7a-7704-a30c-e018c0f8a80a",
+      "conversation_id": "01a1b9ee-ba7a-7704-a30c-e0191fc64cf9",
+      "metadata": null,
+      "workspace_ref": null,
+      "failed_attempts": null,
+      "state": "complete"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search_glossary",
+          "content": "[{\"term\": \"LoRA\", \"lecture\": 2, \"definition\": \"事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoRAを扱う。\", \"related\": [\"peft\", \"lora-rank\", \"qlora\"]}, {\"term\": \"ランク（LoRAのr）\", \"lecture\": 2, \"definition\": \"LoRAで使う低ランク行列の大きさを決めるハイパーパラメータ。大きいほど表現力が上がるが、学習するパラメータとメモリも増える。\", \"related\": [\"lora\"]}, {\"term\": \"QLoRA\", \"lecture\": 2, \"definition\": \"ベースモデルの重みを4ビットなどに量子化してメモリを節約したうえで、LoRAで学習する手法。より大きなモデルを小さなGPUで扱える。本講座の第2回演習ではモデルがGPUに載るためLoRAで学習し、4ビットで読み込んだときのメモリと出力の違いを発展で比べる。\", \"related\": [\"lora\", \"quantization\"]}]",
+          "tool_call_id": "call_8476912677858053669",
+          "tool_kind": null,
+          "metadata": null,
+          "timestamp": "2026-11-08T06:53:24.304781Z",
+          "outcome": "success",
+          "part_kind": "tool-return"
+        },
+        {
+          "tool_name": "search_glossary",
+          "content": "[{\"term\": \"QLoRA\", \"lecture\": 2, \"definition\": \"ベースモデルの重みを4ビットなどに量子化してメモリを節約したうえで、LoRAで学習する手法。より大きなモデルを小さなGPUで扱える。本講座の第2回演習ではモデルがGPUに載るためLoRAで学習し、4ビットで読み込んだときのメモリと出力の違いを発展で比べる。\", \"related\": [\"lora\", \"quantization\"]}, {\"term\": \"LoRA\", \"lecture\": 2, \"definition\": \"事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoRAを扱う。\", \"related\": [\"peft\", \"lora-rank\", \"qlora\"]}]",
+          "tool_call_id": "call_8476912677858052870",
+          "tool_kind": null,
+          "metadata": null,
+          "timestamp": "2026-11-08T06:53:24.304850Z",
+          "outcome": "success",
+          "part_kind": "tool-return"
+        }
+      ],
+      "timestamp": "2026-11-08T06:53:24.305581Z",
+      "instructions": "あなたはAIエンジニアリング講座（AIE2026）の学習支援エージェントです。\n- 用語や講座に固有のことを答える前に、必ず search_glossary で用語集を確認する。\n- 回の内容を聞かれたら get_lecture_summary を使う。\n- 用語集に見つからないことは、推測で断定せず「用語集にはない」と伝える。\n- 回答の最後に、関係する回（第N回）を示す。\n- 宿題の答えそのものは書かず、考え方のヒントで導く。",
+      "kind": "request",
+      "run_id": "01a1b9ee-ba7a-7704-a30c-e018c0f8a80a",
+      "conversation_id": "01a1b9ee-ba7a-7704-a30c-e0191fc64cf9",
+      "metadata": null,
+      "state": "complete"
+    },
+    {
+      "parts": [
+        {
+          "content": "**LoRA**と**QLoRA**の主な違いは、ベースモデルの重みを量子化（圧縮）するかどうかです。\n\n* **LoRA**: 事前学習済みの重みは固定したまま、更新分（低ランク行列）だけを学習するPEFT手法です。学習するパラメータ数を減らし、効率的にファインチューニングを行えます。\n* **QLoRA**: LoRAの仕組みをベースにしつつ、ベースモデルの重みを4ビットなどに量子化（Quantization）してメモリをさらに大幅に節約した上で学習する手法です。これにより、より大きなモデルを小さなGPU環境でも扱えるようになります。\n\n（第2回）",
+          "id": null,
+          "provider_name": "google",
+          "provider_details": {
+            "thought_signature": "EmAKXgFpFH0TrwPFc8voEEBhw4z0XKgw/I8/hB3xE4Ra6iKdHyvRaaTpPwlaLVAaTWFlKMOT+qM8YuMdCCVmgfQ0E2A+gIguxdr+747U8K1XTm41b3xnLx9HZJzhuaBimyo="
+          },
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 977,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 145,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "audio_seconds": 0.0,
+        "details": {
+          "text_prompt_tokens": 977
+        },
+        "cost": "0.0006556",
+        "input_text_tokens": 977
+      },
+      "model_name": "gemini-3.5-flash-lite",
+      "timestamp": "2026-11-08T06:53:26.729689Z",
+      "kind": "response",
+      "provider_name": "google",
+      "provider_url": "https://generativelanguage.googleapis.com/",
+      "provider_details": {
+        "finish_reason": "STOP",
+        "service_tier": "standard"
+      },
+      "provider_response_id": "ZBzwau3yIN3hrfcP0pzn8QQ",
+      "finish_reason": "stop",
+      "run_id": "01a1b9ee-ba7a-7704-a30c-e018c0f8a80a",
+      "conversation_id": "01a1b9ee-ba7a-7704-a30c-e0191fc64cf9",
+      "metadata": null,
+      "workspace_ref": null,
+      "failed_attempts": null,
+      "state": "complete"
+    }
+  ],
+  "requests": 2,
+  "status": "success"
+}

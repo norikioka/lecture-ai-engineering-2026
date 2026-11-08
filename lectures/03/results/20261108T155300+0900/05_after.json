@@ -1,0 +1,174 @@
+{
+  "case": "05_after",
+  "model": "gemini-3.5-flash-lite",
+  "question": "LoRAとQLoRAの違いは？",
+  "instructions": "あなたはAIエンジニアリング講座（AIE2026）の学習支援エージェントです。\n- 回の内容を聞かれたら get_lecture_summary を使う。\n- 用語集に見つからないことは、推測で断定せず「用語集にはない」と伝える。\n- 回答の最後に、関係する回（第N回）を示す。\n- 宿題の答えそのものは書かず、考え方のヒントで導く。\n",
+  "started_at": "2026-11-08T15:53:26.734430+09:00",
+  "source_sha256": {
+    "app/agent.py": "a1cf2430e45c866f46fd21aaf66a7d30291c2ec071cd7912a080fa3455b0a2a7",
+    "app/tools.py": "7743f5cade4bc6ebfc07617b66d51a92c988edbc336f8a68d60b9f82aca76a3b",
+    "app/ask.py": "7c7ec4e5936fa9a708eda2cadb56f7855424dc447222779ba3debb7b0d855774",
+    "data/glossary.json": "4b614a08a754bf6cf714f905f185ad5ef22e0957c7e64434a4b418edb68c2319",
+    "uv.lock": "dd3e258db9c737f0bd5975bfe1465984ac7c831daa8076c62e34b47835d986ff"
+  },
+  "repeat": 1,
+  "output": "用語集からそれぞれの定義を確認しました。\n\n* **LoRA**: 事前学習済みの重みは固定したまま、重みの更新分を2つの小さな低ランク行列の積で表し、その小さな行列だけを学習するPEFT（Parameter-Efficient Fine-Tuning）手法です。学習パラメータや保存ファイルを少なく抑えられます。\n* **QLoRA**: ベースモデルの重みを4ビットなどに**量子化**してメモリを大幅に節約したうえで、LoRAを適用して学習する手法です。これにより、より大きなモデルを小さなGPUでも効率よく扱えるようになります。\n\n関係する回：第2回",
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "LoRAとQLoRAの違いは？",
+          "timestamp": "2026-11-08T06:53:26.755415Z",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "timestamp": "2026-11-08T06:53:26.755588Z",
+      "instructions": "あなたはAIエンジニアリング講座（AIE2026）の学習支援エージェントです。\n- 回の内容を聞かれたら get_lecture_summary を使う。\n- 用語集に見つからないことは、推測で断定せず「用語集にはない」と伝える。\n- 回答の最後に、関係する回（第N回）を示す。\n- 宿題の答えそのものは書かず、考え方のヒントで導く。",
+      "kind": "request",
+      "run_id": "01a1b9ee-f162-724a-ba51-d03b7a18d697",
+      "conversation_id": "01a1b9ee-f162-724a-ba51-d03caaa348fd",
+      "metadata": null,
+      "state": "complete"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search_glossary",
+          "args": {
+            "query": "LoRA"
+          },
+          "tool_call_id": "call_1609089538267211267",
+          "tool_kind": null,
+          "id": null,
+          "provider_name": "google",
+          "provider_details": {
+            "thought_signature": "EmAKXgFpFH0T+4aPhmO656O/hOpJ/JIB47acwba40u71HKONtwpQ/rF/RIrgmCQ3IAmh4kx5YsMvRTi5BZkgma/Ysp3gfkK+m1qDCsi6DILbt2o78uCBGpruwX/b28CUC1g="
+          },
+          "part_kind": "tool-call"
+        },
+        {
+          "tool_name": "search_glossary",
+          "args": {
+            "query": "QLoRA"
+          },
+          "tool_call_id": "call_1609089538267212060",
+          "tool_kind": null,
+          "id": null,
+          "provider_name": null,
+          "provider_details": null,
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 393,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 37,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "audio_seconds": 0.0,
+        "details": {
+          "text_prompt_tokens": 393
+        },
+        "cost": "0.0002104",
+        "input_text_tokens": 393
+      },
+      "model_name": "gemini-3.5-flash-lite",
+      "timestamp": "2026-11-08T06:53:30.005098Z",
+      "kind": "response",
+      "provider_name": "google",
+      "provider_url": "https://generativelanguage.googleapis.com/",
+      "provider_details": {
+        "finish_reason": "STOP",
+        "service_tier": "standard"
+      },
+      "provider_response_id": "ZxzwarLsAevY9tMPj-G4wAo",
+      "finish_reason": "stop",
+      "run_id": "01a1b9ee-f162-724a-ba51-d03b7a18d697",
+      "conversation_id": "01a1b9ee-f162-724a-ba51-d03caaa348fd",
+      "metadata": null,
+      "workspace_ref": null,
+      "failed_attempts": null,
+      "state": "complete"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search_glossary",
+          "content": "[{\"term\": \"LoRA\", \"lecture\": 2, \"definition\": \"事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoRAを扱う。\", \"related\": [\"peft\", \"lora-rank\", \"qlora\"]}, {\"term\": \"ランク（LoRAのr）\", \"lecture\": 2, \"definition\": \"LoRAで使う低ランク行列の大きさを決めるハイパーパラメータ。大きいほど表現力が上がるが、学習するパラメータとメモリも増える。\", \"related\": [\"lora\"]}, {\"term\": \"QLoRA\", \"lecture\": 2, \"definition\": \"ベースモデルの重みを4ビットなどに量子化してメモリを節約したうえで、LoRAで学習する手法。より大きなモデルを小さなGPUで扱える。本講座の第2回演習ではモデルがGPUに載るためLoRAで学習し、4ビットで読み込んだときのメモリと出力の違いを発展で比べる。\", \"related\": [\"lora\", \"quantization\"]}]",
+          "tool_call_id": "call_1609089538267211267",
+          "tool_kind": null,
+          "metadata": null,
+          "timestamp": "2026-11-08T06:53:30.008870Z",
+          "outcome": "success",
+          "part_kind": "tool-return"
+        },
+        {
+          "tool_name": "search_glossary",
+          "content": "[{\"term\": \"QLoRA\", \"lecture\": 2, \"definition\": \"ベースモデルの重みを4ビットなどに量子化してメモリを節約したうえで、LoRAで学習する手法。より大きなモデルを小さなGPUで扱える。本講座の第2回演習ではモデルがGPUに載るためLoRAで学習し、4ビットで読み込んだときのメモリと出力の違いを発展で比べる。\", \"related\": [\"lora\", \"quantization\"]}, {\"term\": \"LoRA\", \"lecture\": 2, \"definition\": \"事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoRAを扱う。\", \"related\": [\"peft\", \"lora-rank\", \"qlora\"]}]",
+          "tool_call_id": "call_1609089538267212060",
+          "tool_kind": null,
+          "metadata": null,
+          "timestamp": "2026-11-08T06:53:30.008917Z",
+          "outcome": "success",
+          "part_kind": "tool-return"
+        }
+      ],
+      "timestamp": "2026-11-08T06:53:30.009472Z",
+      "instructions": "あなたはAIエンジニアリング講座（AIE2026）の学習支援エージェントです。\n- 回の内容を聞かれたら get_lecture_summary を使う。\n- 用語集に見つからないことは、推測で断定せず「用語集にはない」と伝える。\n- 回答の最後に、関係する回（第N回）を示す。\n- 宿題の答えそのものは書かず、考え方のヒントで導く。",
+      "kind": "request",
+      "run_id": "01a1b9ee-f162-724a-ba51-d03b7a18d697",
+      "conversation_id": "01a1b9ee-f162-724a-ba51-d03caaa348fd",
+      "metadata": null,
+      "state": "complete"
+    },
+    {
+      "parts": [
+        {
+          "content": "用語集からそれぞれの定義を確認しました。\n\n* **LoRA**: 事前学習済みの重みは固定したまま、重みの更新分を2つの小さな低ランク行列の積で表し、その小さな行列だけを学習するPEFT（Parameter-Efficient Fine-Tuning）手法です。学習パラメータや保存ファイルを少なく抑えられます。\n* **QLoRA**: ベースモデルの重みを4ビットなどに**量子化**してメモリを大幅に節約したうえで、LoRAを適用して学習する手法です。これにより、より大きなモデルを小さなGPUでも効率よく扱えるようになります。\n\n関係する回：第2回",
+          "id": null,
+          "provider_name": "google",
+          "provider_details": {
+            "thought_signature": "EmAKXgFpFH0TTZsmk2oMLxdRhrA3mO0WyKdHNxTHJPRJvOPCEaDZxqdOjHdMy3HPutxSdQD4eNmHRAWJ4jjSXaUM2PpivxC+GPd7a1eNiptXPwi/SgHhXi7DQCcwGZYgBRc="
+          },
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 953,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 138,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "audio_seconds": 0.0,
+        "details": {
+          "text_prompt_tokens": 953
+        },
+        "cost": "0.0006309",
+        "input_text_tokens": 953
+      },
+      "model_name": "gemini-3.5-flash-lite",
+      "timestamp": "2026-11-08T06:53:31.145574Z",
+      "kind": "response",
+      "provider_name": "google",
+      "provider_url": "https://generativelanguage.googleapis.com/",
+      "provider_details": {
+        "finish_reason": "STOP",
+        "service_tier": "standard"
+      },
+      "provider_response_id": "ahzwauaPDpy-1e8PtajC0AM",
+      "finish_reason": "stop",
+      "run_id": "01a1b9ee-f162-724a-ba51-d03b7a18d697",
+      "conversation_id": "01a1b9ee-f162-724a-ba51-d03caaa348fd",
+      "metadata": null,
+      "workspace_ref": null,
+      "failed_attempts": null,
+      "state": "complete"
+    }
+  ],
+  "requests": 2,
+  "status": "success"
+}

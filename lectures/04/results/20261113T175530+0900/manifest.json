@@ -1,0 +1,81 @@
+{
+  "base_commit": "bc41dfac203acff0706b7da10d09339d91830bfe",
+  "model": "gemini-3.5-flash-lite",
+  "temperature": 0,
+  "labels_provenance": "Codex draft reviewed and accepted by user on 2026-11-13 before real-model execution",
+  "free_tier": "User confirmed on 2026-11-13",
+  "hashes_before": {
+    "lectures/04/labels.jsonl": "3986f252788f23965316b22dcc6a5ace3a6128152873fed8377b19b646946b80",
+    "data/eval/lec04_cases.jsonl": "75d611503511caede2cfda3ac68b74e33a16c4275e548cbb40c73da4394374c5",
+    "data/glossary.json": "804a6ff955f550989a2b02a5f5c98e79ebae58c7c07fd20115d37465f70df204",
+    "app/judge.py": "b49727b72eaa9a191924196d7b0c9a37b20378696c2045da16cb2a92122d39de",
+    "app/config.py": "1d589149a7421f2fb75c9dec3f49bf1cb9f1640d82104a9511ce91edc4c4cdaa",
+    "uv.lock": "dd3e258db9c737f0bd5975bfe1465984ac7c831daa8076c62e34b47835d986ff",
+    "lectures/04/experiment/rubric_before.md": "38b9f33a5ba0a93359ed78651b3048821c58f856d6a9839f79d8e90ba8bd5198",
+    "lectures/04/experiment/rubric_after.md": "6fbdeb22d984518f0b866f092c189e37139eb16b407bdb99e853544922684630"
+  },
+  "runs": [
+    {
+      "condition": "before",
+      "command": [
+        "uv",
+        "run",
+        "--frozen",
+        "--python",
+        "3.12",
+        "python",
+        "-m",
+        "app.judge",
+        "--model",
+        "gemini-3.5-flash-lite",
+        "--labels",
+        "lectures/04/labels.jsonl",
+        "--rubric",
+        "lectures/04/experiment/rubric_before.md",
+        "--wait",
+        "4",
+        "--out",
+        "lectures/04/results/20261113T175530+0900/before.json"
+      ],
+      "started_at": "2026-11-13T17:55:30.572306+09:00",
+      "finished_at": "2026-11-13T17:56:31.093602+09:00",
+      "returncode": 0
+    },
+    {
+      "condition": "after",
+      "command": [
+        "uv",
+        "run",
+        "--frozen",
+        "--python",
+        "3.12",
+        "python",
+        "-m",
+        "app.judge",
+        "--model",
+        "gemini-3.5-flash-lite",
+        "--labels",
+        "lectures/04/labels.jsonl",
+        "--rubric",
+        "lectures/04/experiment/rubric_after.md",
+        "--wait",
+        "4",
+        "--out",
+        "lectures/04/results/20261113T175530+0900/after.json"
+      ],
+      "started_at": "2026-11-13T17:56:31.097091+09:00",
+      "finished_at": "2026-11-13T17:57:29.334973+09:00",
+      "returncode": 0
+    }
+  ],
+  "hashes_after": {
+    "lectures/04/labels.jsonl": "3986f252788f23965316b22dcc6a5ace3a6128152873fed8377b19b646946b80",
+    "data/eval/lec04_cases.jsonl": "75d611503511caede2cfda3ac68b74e33a16c4275e548cbb40c73da4394374c5",
+    "data/glossary.json": "804a6ff955f550989a2b02a5f5c98e79ebae58c7c07fd20115d37465f70df204",
+    "app/judge.py": "b49727b72eaa9a191924196d7b0c9a37b20378696c2045da16cb2a92122d39de",
+    "app/config.py": "1d589149a7421f2fb75c9dec3f49bf1cb9f1640d82104a9511ce91edc4c4cdaa",
+    "uv.lock": "dd3e258db9c737f0bd5975bfe1465984ac7c831daa8076c62e34b47835d986ff",
+    "lectures/04/experiment/rubric_before.md": "38b9f33a5ba0a93359ed78651b3048821c58f856d6a9839f79d8e90ba8bd5198",
+    "lectures/04/experiment/rubric_after.md": "6fbdeb22d984518f0b866f092c189e37139eb16b407bdb99e853544922684630"
+  }
+}

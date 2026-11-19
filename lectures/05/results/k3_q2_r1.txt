@@ -1,0 +1,21 @@
+[model] gemini-3.5-flash-lite
+第3回の講義資料によると、コンパクションとセッションをまたぐメモリ（外の保存先）には、以下のような違いがあります。
+
+* **コンパクション**
+  * **場所・範囲**: コンテキストの中（同じセッション内）の処理です（第3回・PDF p.39）。
+  * **仕組み**: 古い履歴を要約して詰めることで、コンテキストの上限による途中経過の脱落を防ぎます（第3回・PDF p.38, 39）。
+* **セッションをまたぐメモリ**
+  * **場所・範囲**: 外の保存先（ファイルやデータベースなど）に保存され、セッションをまたいで引き継がれます（第3回・PDF p.13, 39）。
+  * **仕組み**: 過去のやり取りから必要な情報を書き出し、新しいコンテキストに読み戻すことで、毎回ゼロからやり直すのを防ぎます（第3回・PDF p.13, 38, 39）。
+
+また、「日々のメモはすべて長期メモリに入りますか？」という点については、資料にあるOpenClawの実装例において、毎晩過去のやり取りを見直して（dreaming）基準を超えたものだけを長期メモリ（`MEMORY.md`）に移す仕組みが紹介されています（第3回・PDF p.40）。そこでは「すべては残さない」「一度きりの調べものは日々のメモに残るだけ」とされており、長期メモリが膨らまないように選別される設計になっています（第3回・PDF p.40）。
+
+--- trace ---
+[tool call]   search_materials({'query': 'コンパクション セッション メモリ'})
+[tool return] search_materials -> {"results": [{"page_id": "lec03-main-p065", "document_id": "lec03-main", "lecture": 3, "document_title": "AIエージェント", "se…
+[tool call]   search_materials({'query': '日々のメモ 長期メモリ すべて'})
+[tool return] search_materials -> {"results": [{"page_id": "lec03-main-p040", "document_id": "lec03-main", "lecture": 3, "document_title": "AIエージェント", "se…
+[time] 回答完了まで 17.78 秒（検索・埋め込みを含む）
+[usage] 入力 4,468 tokens / 出力 390 tokens / モデル応答 3 回
+[cost] 生成APIの推定コスト: $0.002315 USD（埋め込み・索引構築分は含まない）
+[saved] lectures/05/results/k3_q2_r1.json

@@ -1,0 +1,54 @@
+{
+  "created_at": "2026-11-19T16:53:26.148726+09:00",
+  "baseline_commit": "1ce722c",
+  "model": "gemini-3.5-flash-lite",
+  "embedding_model": "gemini-embedding-001",
+  "top_k": [
+    5,
+    3
+  ],
+  "repetitions": 2,
+  "order": "k5: q1 r1,r2; q2 r1,r2; q3 r1,r2; then k3 in same order",
+  "model_settings": "教材の既定値。temperature等の明示指定なし。各実行は新規プロセス・新規会話。",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？",
+      "reference_pages": [
+        "lec02-main-p052"
+      ],
+      "criteria": [
+        "元の重みWを固定",
+        "低ランクの行列A・Bを学習",
+        "QLoRAは元の重みを4bitに量子化",
+        "説明を裏付ける引用"
+      ]
+    },
+    {
+      "id": "q2",
+      "question": "第3回の例では、コンパクションとセッションをまたぐメモリはどう違いますか。日々のメモはすべて長期メモリに入りますか？",
+      "reference_pages": [
+        "lec03-main-p013",
+        "lec03-main-p039",
+        "lec03-main-p040"
+      ],
+      "criteria": [
+        "コンパクションは同一セッションの履歴要約",
+        "メモリは外部保存し別セッションで読み戻す",
+        "日々のメモは全件ではなく選別して長期メモリへ",
+        "説明を裏付ける引用"
+      ]
+    },
+    {
+      "id": "q3",
+      "question": "今回作ったRAGの実測平均応答時間と正答率を教えてください。",
+      "reference_pages": [],
+      "criteria": [
+        "今回のRAGの実測ログが資料にはないと説明",
+        "実測平均応答時間・正答率の数値を創作しない"
+      ]
+    }
+  ],
+  "limitations": "各条件2回の記述比較。時間・品質の一般的優劣や統計的有意差、未見質問への汎化を主張しない。根拠ページは採点用でモデルには与えない。条件を結果に応じて再調整しない。",
+  "source": "lectures/05/problem.md"
+}
